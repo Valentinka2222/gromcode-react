@@ -15,4 +15,3 @@ const element = [
 
 
 ReactDOM.render(element, rootElement)
-    console.log(element)
