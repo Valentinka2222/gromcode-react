@@ -12,7 +12,7 @@ const userInfo = {
 
 
 ReactDOM.render(<Comment
-    user={userInfo}
+    author={userInfo}
     text='Good Job'
     date ={new Date()}
 />, rootelement)
