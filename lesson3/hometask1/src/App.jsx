@@ -11,7 +11,7 @@ const userInfo = {
     return(<AgeUser
         firstName={userInfo.firstName}
         lastName={userInfo.lastName}
-        date={userInfo.birthday}
+        birthDate={userInfo.birthday}
 />)
 }
 export default App
