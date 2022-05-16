@@ -1,5 +1,5 @@
 import React from 'react';
-import App from "./App"
+import { App } from "./Profile"
 import './index.scss'
 import ReactDOM from 'react-dom';
 
