@@ -11,11 +11,18 @@ class Clock extends Component {
       location: props.location,
       date: new Date(),
     };
+    this.updateClock = () => {
+      setInterval(() => {
+        this.setState({ date: new Date() });
+      }, 1000);
+    };
     this.getTimeWithOffset = () => {
       let diff = Math.abs(this.state.date.getHours() - props.offset);
       let minutes = this.state.date.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
-      let date = `${diff}:${minutes}:${this.state.date.getSeconds()} `;
+      let seconds = this.state.date.getSeconds();
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      let date = `${diff}:${minutes}:${seconds} `;
       if (this.state.date.getHours() >= 12) {
         date = date + 'PM';
       } else {
@@ -26,9 +33,7 @@ class Clock extends Component {
   }
 
   render() {
-    this.getTimeWithOffset();
-    console.log(this.state.date);
-
+    this.updateClock();
     return (
       <div className="clock">
         <div className="clock__location">{`${this.state.location}`}</div>
