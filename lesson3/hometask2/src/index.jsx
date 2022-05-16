@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile, { App } from "./Profile"
+import Profile  from "./Profile"
 import './index.scss'
 import ReactDOM from 'react-dom';
 
