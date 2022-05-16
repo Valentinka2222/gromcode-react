@@ -8,7 +8,7 @@ class Clock extends Component {
 
     this.state = {
       location: props.location,
-      date: new Date(),
+      date: new Date(Date.UTC()),
     };
     this.updateClock = () => {
       setInterval(() => {
