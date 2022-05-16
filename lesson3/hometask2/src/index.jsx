@@ -4,5 +4,5 @@ import './index.scss'
 import ReactDOM from 'react-dom';
 
 
-const rootelement = document.querySelector('#root')
-ReactDOM.render(<App/>,rootelement)
+const rootElement = document.querySelector('#root')
+ReactDOM.render(<App/>,rootElement)
