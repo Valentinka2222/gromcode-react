@@ -17,17 +17,13 @@ class Clock extends Component {
       }, 1000);
     };
     this.getTimeWithOffset = () => {
-      let diff = Math.abs(this.state.date.getHours() - props.offset);
       let minutes = this.state.date.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
       let seconds = this.state.date.getSeconds();
       seconds = seconds < 10 ? '0' + seconds : seconds;
-      let date = `${diff}:${minutes}:${seconds} `;
-      if (this.state.date.getHours() >= 12) {
-        date = date + 'PM';
-      } else {
-        date = date + 'AM';
-      }
+      const diff = Math.abs(this.state.date.getHours() - props.offset);
+      const amPm = diff >= 12 ? 'PM' : 'AM';
+      let date = `${diff}:${minutes}:${seconds} ` + amPm;
       return date;
     };
   }
