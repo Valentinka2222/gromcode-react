@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 import './clock.scss';
+
+
+ const getTimeWithOffset = (offset) => {
+    const currentTime = new Date();
+    const utcOffset = currentTime.getTimezoneOffset() / 60;
+     return  new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset)) ;
+}
+
+
+
 
 class Clock extends Component {
   constructor(props) {
@@ -8,31 +19,21 @@ class Clock extends Component {
 
     this.state = {
       location: props.location,
-      date: new Date(),
+      offset:props.offset
     };
-    this.updateClock = () => {
+      this.updateClock = () => {
       setInterval(() => {
-        this.setState({ date: new Date() });
+        this.setState({ date: this.state.date });
       }, 1000);
     };
-    this.getTimeWithOffset = () => {
-      let minutes = this.state.date.getMinutes();
-      minutes = minutes < 10 ? '0' + minutes : minutes;
-      let seconds = this.state.date.getSeconds();
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-      const diff = Math.abs(this.state.date.getHours() - props.offset);
-      const amPm = diff >= 12 ? 'PM' : 'AM';
-      let date = `${diff}:${minutes}:${seconds} ` + amPm;
-      return date;
-    };
-  }
+}
 
   render() {
-    this.updateClock();
+this.updateClock()
     return (
       <div className="clock">
         <div className="clock__location">{`${this.state.location}`}</div>
-        <div className="clock__time">{this.getTimeWithOffset()}</div>
+        <div className="clock__time">{`${moment(getTimeWithOffset(this.state.offset)).format('LTS')}`}</div>
       </div>
     );
   }
