@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import './clock.scss';
 
@@ -16,13 +17,11 @@ class Clock extends Component {
       }, 1000);
     };
     this.getTimeWithOffset = () => {
-      let minutes = this.state.date.getMinutes();
-      minutes = minutes < 10 ? '0' + minutes : minutes;
-      let seconds = this.state.date.getSeconds();
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-      const diff = Math.abs(this.state.date.getHours() - props.offset);
-      const amPm = diff >= 12 ? 'PM' : 'AM';
-      let date = `${diff}:${minutes}:${seconds} ` + amPm;
+      let stringOffset = '0000';
+      stringOffset =
+        stringOffset.substr(0, 1) + `${props.offset}` + stringOffset.substr(props.offset, 1);
+
+      const date = moment.utc(this.state.date).utcOffset(`'${stringOffset}'`).format('LTS');
       return date;
     };
   }
