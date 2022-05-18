@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 
 class ColorPicker extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: ' ',
+    };
+}
+
   onMouseEnter(e) {
-    const elementColorTitle = document.querySelector('.picker__title');
-    elementColorTitle.textContent = e.target.value;
+      const elementColorTitle = document.querySelector('.picker__title');
+    this.setState({
+      color:elementColorTitle.textContent = e.target.value;
+
+    })
   }
-  onMouseLeave() {
-    const elementColorTitle = document.querySelector('.picker__title');
-    elementColorTitle.textContent = '';
-  }
+
 
   render() {
     return (
@@ -19,18 +26,18 @@ class ColorPicker extends Component {
             className="picker__button picker__button_coral"
             value="Coral"
             onMouseEnter={this.onMouseEnter}
-            onMouseLeave={this.onMouseLeave}
+          
           ></button>
           <button
             className="picker__button picker__button_aqua"
             onMouseEnter={this.onMouseEnter}
-            onMouseLeave={this.onMouseLeave}
+           
             value="Aqua"
           ></button>
           <button
             className="picker__button picker__button_bisque"
             onMouseEnter={this.onMouseEnter}
-            onMouseLeave={this.onMouseLeave}
+           
             value="Bisque"
           ></button>
         </div>
