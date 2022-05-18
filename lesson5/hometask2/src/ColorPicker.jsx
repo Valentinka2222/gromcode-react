@@ -12,7 +12,7 @@ class ColorPicker extends Component {
     const elementButtonBisque = document.querySelector('.picker__button_bisque');
     elementButtonAuqa.setAttribute('value', 'Auqa');
     elementButtonCoral.setAttribute('value', 'Coral');
-    elementButtonBisque.setAttribute('value', 'Bisqua');
+    elementButtonBisque.setAttribute('value', 'Bisque');
     const elementColorTitle = document.querySelector('.picker__title');
     elementColorTitle.textContent = e.target.value;
   }
