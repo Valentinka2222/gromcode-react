@@ -9,16 +9,15 @@ class ColorPicker extends Component {
   }
 
   onMouseEnter = e => {
-    const elementColorTitle = document.querySelector('.picker__title');
     this.setState({
-      color: (elementColorTitle.textContent = e.target.value),
+      color: e.target.value,
     });
   };
 
   render() {
     return (
       <div>
-        <div className="picker__title"></div>
+        <div className="picker__title">{this.state.color}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
