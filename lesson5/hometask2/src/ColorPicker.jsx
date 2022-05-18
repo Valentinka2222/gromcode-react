@@ -6,16 +6,14 @@ class ColorPicker extends Component {
     this.state = {
       color: ' ',
     };
-}
-
-  onMouseEnter(e) {
-      const elementColorTitle = document.querySelector('.picker__title');
-    this.setState({
-      color:elementColorTitle.textContent = e.target.value;
-
-    })
   }
 
+  onMouseEnter = e => {
+    const elementColorTitle = document.querySelector('.picker__title');
+    this.setState({
+      color: (elementColorTitle.textContent = e.target.value),
+    });
+  };
 
   render() {
     return (
@@ -26,18 +24,15 @@ class ColorPicker extends Component {
             className="picker__button picker__button_coral"
             value="Coral"
             onMouseEnter={this.onMouseEnter}
-          
           ></button>
           <button
             className="picker__button picker__button_aqua"
             onMouseEnter={this.onMouseEnter}
-           
             value="Aqua"
           ></button>
           <button
             className="picker__button picker__button_bisque"
             onMouseEnter={this.onMouseEnter}
-           
             value="Bisque"
           ></button>
         </div>
