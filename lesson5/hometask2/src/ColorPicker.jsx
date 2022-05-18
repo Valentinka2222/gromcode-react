@@ -10,7 +10,7 @@ class ColorPicker extends Component {
 
   onMouseEnter = e => {
     this.setState({
-      color: e.target.value,
+      color: e.target.dataset.color,
     });
   };
   onMouseLeave = () => {
@@ -26,7 +26,7 @@ class ColorPicker extends Component {
         <div>
           <button
             className="picker__button picker__button_coral"
-            value="Coral"
+            data-color="Coral"
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
           ></button>
@@ -34,13 +34,13 @@ class ColorPicker extends Component {
             className="picker__button picker__button_aqua"
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
-            value="Aqua"
+            data-color="Aqua"
           ></button>
           <button
             className="picker__button picker__button_bisque"
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
-            value="Bisque"
+            data-color="Bisque"
           ></button>
         </div>
       </div>
