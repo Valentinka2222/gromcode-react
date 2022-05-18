@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 class ColorPicker extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   onMouseEnter(e) {
     const elementButtonCoral = document.querySelector('.picker__button_coral');
     const elementButtonAuqa = document.querySelector('.picker__button_aqua');
