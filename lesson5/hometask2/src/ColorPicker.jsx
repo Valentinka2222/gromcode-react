@@ -8,9 +8,7 @@ class ColorPicker extends Component {
       text: ''
     };
   }
-
-
-  onMouseLeave = () => {
+onMouseLeave = () => {
     this.setState({
       text: '',
     });
@@ -24,18 +22,18 @@ class ColorPicker extends Component {
           <button
             className="picker__button picker__button_coral"
           
-          onMouseEnter = {() => { this.setState({ text: "Coral" }) }}
+          onMouseEnter = {() => this.setState({ text: "Coral" }) }
             onMouseLeave={this.onMouseLeave}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-                   onMouseEnter = {() => { this.setState({ text: "Aqua" }) }}
+                   onMouseEnter = {() =>  this.setState({ text: "Aqua" }) }
             onMouseLeave={this.onMouseLeave}
       
           ></button>
           <button
             className="picker__button picker__button_bisque"
-                         onMouseEnter = {() => { this.setState({ text: "Bisque" }) }}
+                         onMouseEnter = {() =>  this.setState({ text: "Bisque" }) }
             onMouseLeave={this.onMouseLeave}
         
           ></button>
