@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 
 class ColorPicker extends Component {
-  onMouseEnter(e) {
-    const elementButtonCoral = document.querySelector('.picker__button_coral');
-    const elementButtonAuqa = document.querySelector('.picker__button_aqua');
-    const elementButtonBisque = document.querySelector('.picker__button_bisque');
-    elementButtonAuqa.setAttribute('value', 'Aqua');
-    elementButtonCoral.setAttribute('value', 'Coral');
-    elementButtonBisque.setAttribute('value', 'Bisque');
-    const elementColorTitle = document.querySelector('.picker__title');
-    elementColorTitle.textContent = e.target.value;
-  }
-  onMouseLeave() {
-    const elementColorTitle = document.querySelector('.picker__title');
-    elementColorTitle.textContent = '';
+  constructor(props) {
+    super();
+    this.onMouseEnter = e => {
+      const elementButtonCoral = document.querySelector('.picker__button_coral');
+      const elementButtonAuqa = document.querySelector('.picker__button_aqua');
+      const elementButtonBisque = document.querySelector('.picker__button_bisque');
+      elementButtonAuqa.setAttribute('value', 'Aqua');
+      elementButtonCoral.setAttribute('value', 'Coral');
+      elementButtonBisque.setAttribute('value', 'Bisque');
+      const elementColorTitle = document.querySelector('.picker__title');
+      elementColorTitle.textContent = e.target.value;
+    };
+    this.onMouseLeave = () => {
+      const elementColorTitle = document.querySelector('.picker__title');
+      elementColorTitle.textContent = '';
+    };
   }
 
   render() {
