@@ -4,25 +4,25 @@ class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: this.color,
+      text: '',
     };
   }
 
   onMouseEnter = e => {
     this.setState({
-      color: e.target.dataset.color,
+      text: e.target.dataset.color,
     });
   };
   onMouseLeave = () => {
     this.setState({
-      color: '',
+      text: '',
     });
   };
 
   render() {
     return (
       <div>
-        <div className="picker__title">{this.state.color}</div>
+        <div className="picker__title">{this.state.text}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
