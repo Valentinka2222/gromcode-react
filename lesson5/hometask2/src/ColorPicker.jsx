@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
+
 class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      text: ''
     };
   }
 
-  onMouseEnter = e => {
-    this.setState({
-      text: e.target.dataset.color,
-    });
-  };
+
   onMouseLeave = () => {
     this.setState({
       text: '',
@@ -26,21 +23,21 @@ class ColorPicker extends Component {
         <div>
           <button
             className="picker__button picker__button_coral"
-            data-color="Coral"
-            onMouseEnter={this.onMouseEnter}
+          
+          onMouseEnter = {() => { this.setState({ text: "Coral" }) }}
             onMouseLeave={this.onMouseLeave}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            onMouseEnter={this.onMouseEnter}
+                   onMouseEnter = {() => { this.setState({ text: "Aqua" }) }}
             onMouseLeave={this.onMouseLeave}
-            data-color="Aqua"
+      
           ></button>
           <button
             className="picker__button picker__button_bisque"
-            onMouseEnter={this.onMouseEnter}
+                         onMouseEnter = {() => { this.setState({ text: "Bisque" }) }}
             onMouseLeave={this.onMouseLeave}
-            data-color="Bisque"
+        
           ></button>
         </div>
       </div>
