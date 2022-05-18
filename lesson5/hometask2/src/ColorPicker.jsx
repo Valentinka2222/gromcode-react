@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-const RED = '#f00';
-const GREEN = '#0f0';
-const BLUE = '#00f';
-
 class ColorPicker extends Component {
-  handleClick(e) {
+  onMouseEnter(e) {
     const elementColorTitle = document.querySelector('.picker__title');
     elementColorTitle.textContent = e.target.value;
+  }
+  onMouseLeave() {
+    const elementColorTitle = document.querySelector('.picker__title');
+    elementColorTitle.textContent = '';
   }
 
   render() {
@@ -18,16 +18,19 @@ class ColorPicker extends Component {
           <button
             className="picker__button picker__button_coral"
             value="Coral"
-            onMouseEnter={this.handleClick}
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            onMouseEnter={this.handleClick}
-            value="Aqua"
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
+            value="Auqa"
           ></button>
           <button
             className="picker__button picker__button_bisque"
-            onMouseEnter={this.handleClick}
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
             value="Bisque"
           ></button>
         </div>
