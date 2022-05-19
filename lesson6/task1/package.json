@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "core-js": "^3.5.0",
+    "emoji-dictionary": "^1.0.11",
     "moment": "^2.29.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
