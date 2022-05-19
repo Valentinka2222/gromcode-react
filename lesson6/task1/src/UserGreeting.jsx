@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 const UserGreeting = () => {
   return <h1>Hello, user {'\u1f60e'}</h1>;
