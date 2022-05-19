@@ -8,10 +8,10 @@ class Auth extends Component {
       isLoggedIn: false,
     };
   }
-  handleLogin = () => {
+  onLogin = () => {
     this.setState({ isLoggedIn: true });
   };
-  handleLogOut = () => {
+  onLogOut = () => {
     this.setState({ isLoggedIn: false });
   };
   render() {
@@ -19,9 +19,9 @@ class Auth extends Component {
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
         {this.state.isLoggedIn ? (
-          <button onClick={this.handleLogOut}>Logout</button>
+          <button onClick={this.onLogOut}>Logout</button>
         ) : (
-          <button onClick={this.handleLogin}>Login</button>
+          <button onClick={this.onLogin}>Login</button>
         )}
       </div>
     );
