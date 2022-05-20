@@ -21,7 +21,6 @@ class Page extends Component {
     return (
       <div className="page">
         <Message text={this.state.text} />
-
         <div className="actions">
           <button className="btn" onClick={() => this.setText(text1)}>
             Text 1
