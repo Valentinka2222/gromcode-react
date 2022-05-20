@@ -38,3 +38,11 @@ body {
   padding: 8px;
   cursor: pointer;
 }
+
+.emoji-raceta:after {
+  content: '\01F680';
+}
+
+.emoji-smile:after {
+  content: '\1F60E';
+}
