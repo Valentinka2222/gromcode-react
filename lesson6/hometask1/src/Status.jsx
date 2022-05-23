@@ -12,7 +12,11 @@ class Status extends Component {
   }
 
   render() {
-    return <div className="status">{!this.state.isOnline ?<Offline />  : <Online />}</div>;
+    return <div className="status">
+      {this.state.isOnline
+        ? <Online />
+        : <Offline /> }
+    </div>;
   }
 }
 export default Status;
