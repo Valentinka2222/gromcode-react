@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Login = ({ onClick }) => {
+const Login = ({onLogin}) => {
+
   return (
-    <button className="login btn" onClick={onClick}>
+    <button className="login btn" onClick={onLogin}>
       Login
     </button>
   );
