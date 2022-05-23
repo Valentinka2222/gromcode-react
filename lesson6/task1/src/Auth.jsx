@@ -7,7 +7,7 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
   }
   handleLogin = () => {
@@ -21,10 +21,11 @@ class Auth extends Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? (
-            <Logout onLogout={this. handleLogout} />
+        {!this.state.isLoggedIn ? (
+              <Login onLogin={this.handleLogin} />
+          
         ): (
-             <Login onLogin={this.handleLogin} />
+           <Logout onLogout={this. handleLogout} />
        
         )}
       </div>
