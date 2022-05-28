@@ -9,55 +9,41 @@ class Auth extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-    
-
-
-    };
+      hidden:false };
     
   }
   handleLogin = () => {
-   this.setState({
-    isLoggedIn: true})};
+    this.setState({
+      hidden: true
+   });
+   setTimeout(() => {
+      this.setState({
+       isLoggedIn: true,
+        hidden:false
+      })
+    }, 2000);
+   
+  
+  };
 
   handleLogout = () => {
-
     this.setState({
-      isLoggedIn: false,
-  
-         
-
-    });
+     isLoggedIn: false,
+     hidden: false
+   });
+   
   };
 
   render() {
     
-    setTimeout(() => {
-      this.setState({
-    isLoggedIn: false})
-      
-      }, 2000);
-   
     return ( 
-     
-
-
       <div className="panel">
-         {this.state.isLoggedIn && <Spinner size={50} /> }
-        {!this.state.isLoggedIn ?
-        <Login onLogin={this.handleLogin} /> :<Logout onLogout={this.handleLogout} />
-         }
-    
-      </div>
-    );
+        {this.state.isLoggedIn
+          ? (<Logout onLogout={this.handleLogout} />)
+          : (<Login onLogin={this.handleLogin} />)}
+    {this.state.hidden && <Spinner size={'50px'} />} 
+      
+</div>)
   }
 }
 export default Auth;
-// export const delay = time => {
-//   const p = new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve();
-//     }, time);
-//   });
-//   return p;
-// };
-// delay(3000).then(() => console.log('Done'));

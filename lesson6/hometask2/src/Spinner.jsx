@@ -22,11 +22,11 @@ import ClipLoader from 'react-spinners/ClipLoader';
 //   }
 // }
 
-const Spinner = ({ size, hidden }) => {
+const Spinner = ({ size }) => {
   return (
-    <span>
-      <ClipLoader className="spinner" size={size} hidden={hidden} />
-    </span>
+    <span
+      className="spinner" style={{width:size,height:size}} >
+</span>
   );
 };
 export default Spinner;
