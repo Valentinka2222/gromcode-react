@@ -6,7 +6,7 @@ class TransactionsList extends Component {
   render() {
     return (
       <div className="transactions">
-        <ul className="transactions">
+        <ul>
           {this.props.transactions.map(transaction => (
             <Transaction key={transaction.id} {...transaction} />
           ))}
