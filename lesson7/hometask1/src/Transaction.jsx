@@ -10,8 +10,10 @@ const Transaction = ({ from, to, amount, rate, time }) => {
     <li className="transaction">
       <span className="transaction__date">{formatDate()}</span>
       <span className="transaction__time">{formatTime(time)}</span>
-      <span className="transaction__assets">{from}</span>
-      <span className="transaction__assets">{to}</span>
+      <span className="transaction__assets">
+        {from} → {to}
+      </span>
+
       <span className="transaction__rate">{formatNumber(rate)}</span>
       <span className="transaction__amount">{formatNumber(amount)}</span>
     </li>
