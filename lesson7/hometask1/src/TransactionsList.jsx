@@ -11,7 +11,7 @@ class TransactionsList extends Component {
       <div className="transactions">
         <ul>
           {transactionsNew.map(transaction => (
-            <Transaction key={transaction.time} {...transaction} />
+            <Transaction key={transaction.id} {...transaction} />
           ))}
         </ul>
       </div>
