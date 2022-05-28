@@ -27,7 +27,7 @@ class UsersList extends Component {
           {this.state.sorting || '-'}
         </button>
         <ul className="users">
-          {this.props.users.map(user => (
+          {usersList.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
