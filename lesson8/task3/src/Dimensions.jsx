@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Dimensions extends Component {
+class Dimension extends Component {
   state = {
     width: null,
     height: null,
@@ -10,26 +10,26 @@ class Dimensions extends Component {
     window.addEventListener('resize', this.onResize);
 
     const { innerWidth, innerHeight } = window;
-    this.setDimention(innerHeight, innerWidth);
+    this.setDimensions(innerHeight, innerWidth);
   }
   componenWillUnMount() {
     window.removeEventListener('resize', this.onResize);
   }
   onResize = e => {
     const { innerWidth, innerHeight } = e.target;
-
-    this.setDimention(innerHeight, innerWidth);
+    this.setDimensions(innerHeight, innerWidth);
   };
 
-  setDimention = (width, height) => {
+  setDimensions = (width, height) => {
     this.setState({
       width,
       height,
     });
+    document.title = `${innerWidth} x ${innerHeight}`;
   };
 
   render() {
     return <div className="dimensions">{`${this.state.width} x ${this.state.height}`}</div>;
   }
 }
-export default Dimensions;
+export default Dimension;
