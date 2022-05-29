@@ -25,15 +25,9 @@ class Demo extends Component {
     return (
       <div>
         <div>
-          <button className="btn" onClick={this.show}>
-            Show
-          </button>
-          <button className="btn" onClick={this.hide}>
-            Hide
-          </button>
-          <button className="btn" onClick={this.update}>
-            Update
-          </button>
+          <button onClick={this.show}>Show</button>
+          <button onClick={this.hide}>Hide</button>
+          <button onClick={this.update}>Update</button>
           <div>{this.state.visible && <Life number={this.state.number}></Life>}</div>
         </div>
       </div>
