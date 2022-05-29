@@ -6,20 +6,23 @@ class Life extends Component {
     console.log('constructor: good place to create state');
   }
   componentDidMount() {
-    console.log('componentDidMount:API calls, subcriptions');
+    console.log('componentDidMount: API calls, subcriptions');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextProps, nextState);
-    console.log('shouldComponentUpdate(nextProps, nextState):deside to render or not to render');
+    console.log(
+      `'shouldComponentUpdate(${nextProps}, ${nextState}): deside to render or not to render'`,
+    );
     return nextProps.number % 2;
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate(prevProps, prevState):some updates based on new props');
+    console.log(
+      `'componentDidUpdate(${prevProps}, ${prevState}): some updates based on new props'`,
+    );
   }
 
   componentWillUnMount() {
-    console.log('componentWillUnMount():cleanup before DOM related to component will be removed');
+    console.log('componentWillUnMount(): cleanup before DOM related to component will be removed');
   }
 
   render() {
