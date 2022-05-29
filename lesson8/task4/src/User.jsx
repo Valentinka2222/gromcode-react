@@ -9,7 +9,7 @@ class User extends Component {
   }
 
   fetchUser = userId => {
-    fetch(`https://api.github.com/users/${this.props.userId}`)
+    fetch(`https://api.github.com/users/${userId}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
