@@ -32,7 +32,7 @@ class User extends Component {
         <div className="user__info">
           <span className="user__name">{name}</span>
 
-          <span className="user__location">{location} </span>
+          <span className="user__location">{location}</span>
         </div>
       </div>
     );
