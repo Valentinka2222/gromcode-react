@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 
 class ConnectionStatus extends Component {
   state = {
-    status: 'online',
-    offlineClass: '',
+    isOnline: true,
+    isClass: '',
   };
 
   componentDidMount() {
@@ -19,19 +18,19 @@ class ConnectionStatus extends Component {
 
   onLine = () => {
     this.setState({
-      status: 'online',
+      isOnline: true,
     });
   };
   offLine = () => {
     this.setState({
-      status: 'offline',
+      isOnline: false,
     });
   };
 
   render() {
     return (
-      <div className={this.state.status ? 'status' : 'status  status_offline'}>
-        {this.state.status}
+      <div className={this.state.isOnline ? 'status' : 'status status_offline'}>
+        {this.state.isOnline ? 'online' : 'offline'}
       </div>
     );
   }
