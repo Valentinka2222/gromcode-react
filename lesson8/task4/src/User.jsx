@@ -19,17 +19,20 @@ class User extends Component {
   };
 
   render() {
+    const { user } = this.state;
+
     if (!this.state.user) {
       return null;
     }
+    const { avatar_url, location, name } = user;
 
     return (
       <div className="user">
-        <img alt="User Avatar" src={this.state.user.avatar_url} className="user__avatar" />
+        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
         <div className="user__info">
-          <span className="user__name">{this.state.user.name}</span>
+          <span className="user__name">{name}</span>
 
-          <span className="user__location">{this.state.user.location} </span>
+          <span className="user__location">{location} </span>
         </div>
       </div>
     );
