@@ -17,7 +17,7 @@ class Dimensions extends Component {
   }
   onResize = e => {
     const { innerWidth, innerHeight } = e.target;
-    this.setDimensions(innerHeight, innerWidth);
+    this.setDimensions(innerWidth, innerHeight);
   };
 
   setDimensions = (width, height) => {
