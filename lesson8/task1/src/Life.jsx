@@ -6,7 +6,7 @@ class Life extends Component {
     console.log('constructor: good place to create state');
   }
   componentDidMount() {
-    console.log('componentDidMount: API calls, subcriptions');
+    console.log('API calls, subcriptions');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
