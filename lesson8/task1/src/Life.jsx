@@ -10,15 +10,11 @@ class Life extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(
-      `'shouldComponentUpdate(${nextProps}, ${nextState}): deside to render or not to render'`,
-    );
+    console.log('shouldComponentUpdate(nextProps, nextState): deside to render or not to render');
     return nextProps.number % 2;
   }
-  componentDidUpdate(prevProps, prevState) {
-    console.log(
-      `'componentDidUpdate(${prevProps}, ${prevState}): some updates based on new props'`,
-    );
+  componentDidUpdate() {
+    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
   componentWillUnMount() {
