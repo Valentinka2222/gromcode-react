@@ -19,7 +19,6 @@ class User extends Component {
   };
 
   render() {
-    const { user } = this.state;
     if (!this.state.user) {
       return null;
     }

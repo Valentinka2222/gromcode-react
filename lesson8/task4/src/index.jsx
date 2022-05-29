@@ -6,4 +6,4 @@ import User from './User';
 
 const rootelement = document.querySelector('#root');
 
-ReactDOM.render(<User userId="facebook" />, rootelement);
+ReactDOM.render(<User userId="Facebook" />, rootelement);
