@@ -15,7 +15,7 @@ class Life extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState === this.state) {
+    if (prevState.number !== this.state.number) {
     
       console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
     }
