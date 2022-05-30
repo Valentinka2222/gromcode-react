@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
-  state = { value: 'Search text: ' };
+  state = { value: '' };
 
   handleChange = event => {
     this.setState({
@@ -11,7 +11,7 @@ class Search extends Component {
 
   search = event => {
     event.preventDefault();
-    alert(this.state.value);
+    alert('Search text: ' + this.state.value);
   };
   render() {
     return (
