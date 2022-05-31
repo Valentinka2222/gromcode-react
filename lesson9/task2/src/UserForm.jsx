@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import App from './App'
 
 class UserForm extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       name: '',
       student: '',
@@ -21,16 +23,16 @@ class UserForm extends Component {
       [name]: val,
     });
   };
-  handleSubmit = event=>fn => {
+  handleSubmit = event=>fn=> {
     event.preventDefault();
+
+  fn()
 
   };
 
   render() {
-  
-
     return (
-      <form className="login-form" onSubmit={event => this.handleSubmit(event,this.props.createUser(this.state))}>
+      <form className="login-form" onSubmit={event=>this.handleSubmit(event,this.props.func(this.state))}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
@@ -85,7 +87,7 @@ class UserForm extends Component {
             className="form-input"
           />
         </div>
-        <button className="submit-button" type="submit">
+        <button className="submit-button"  type="submit">
           Submit
         </button>
       </form>

@@ -3,9 +3,11 @@ import UserForm from './UserForm';
 
 
 class App extends Component {
-  
-
-  createUser = (data) => {
+  constructor(props) {
+    super(props)
+this.func=this.createUser.bind(this)
+  }
+  createUser (data) {
     console.log(data)
   }
 
@@ -13,7 +15,7 @@ class App extends Component {
 
 
 
-  return <UserForm onsubmit={()=> this.createUser()} />
+  return <UserForm func = {this.createUser} />
 }
 };
 export default App;
