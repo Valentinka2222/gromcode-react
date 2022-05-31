@@ -4,18 +4,20 @@ import UserForm from './UserForm';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    
 this.func=this.createUser.bind(this)
+  
+ 
   }
-  createUser (data) {
+  createUser(data) {
     console.log(data)
   }
-
   render() {
 
 
 
-  return <UserForm func = {this.createUser} />
+  return <UserForm func = {this.func} />
 }
 };
 export default App;
