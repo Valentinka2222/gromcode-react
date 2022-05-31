@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      student: '',
+      occupation: '',
+      about: '',
+    };
+  }
   handleSubmit = (event, userData) => {
     event.preventDefault();
-    const formData = [...new FormData(this.formRef)].reduce(
+    let formData = [...new FormData(this.formRef)].reduce(
       (acc, [name, value]) => ({
         ...acc,
         [name]: value,
       }),
       {},
     );
-    this.props.onSubmit(userData);
+    userData = formData;
+    this.props.onSubmit(formData);
   };
   setRef = node => {
     //this.setState({ formRef: node });
