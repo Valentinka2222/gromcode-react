@@ -23,16 +23,16 @@ class UserForm extends Component {
       [name]: val,
     });
   };
-  handleSubmit = event=> {
+  handleSubmit = (event,obj) =>{
     event.preventDefault();
-this.props.createUser===new App().createUser(this.state)
+this.props.createUser===new App().createUser(obj)
 
 
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={event=>this.handleSubmit(event,this.state)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
