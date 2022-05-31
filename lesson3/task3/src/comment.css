@@ -5,9 +5,14 @@
 }
 
 .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .user-info__name {
   margin-left: 8px;
   opacity: 0.6;
@@ -17,7 +22,8 @@
 .comment__text {
   margin: 8px 0;
 }
+
 .comment__date {
   opacity: 0.5;
 }
-/*# sourceMappingURL=comments.css.map */
+/*# sourceMappingURL=comment.css.map */

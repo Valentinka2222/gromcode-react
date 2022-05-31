@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from './App'
+import App from './App';
 
 class UserForm extends Component {
   constructor(props) {
@@ -11,11 +11,9 @@ class UserForm extends Component {
       occupation: '',
       about: '',
     };
-
   }
 
   handleChange = event => {
-
     const { name, value, checked, type } = event.target;
 
     const val = type === 'checkbox' ? checked : value;
@@ -24,16 +22,13 @@ class UserForm extends Component {
     });
   };
   handleSubmit = (event, obj) => {
-
     event.preventDefault();
-this.props.onSubmit(obj)
-
-
+    this.props.onSubmit(obj);
   };
 
   render() {
     return (
-      <form className="login-form" onSubmit={event=>this.handleSubmit(event,this.state)}>
+      <form className="login-form" onSubmit={event => this.handleSubmit(event, this.state)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
@@ -88,7 +83,7 @@ this.props.onSubmit(obj)
             className="form-input"
           />
         </div>
-        <button className="submit-button"  type="submit">
+        <button className="submit-button" type="submit">
           Submit
         </button>
       </form>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  handleSubmit = event => {
+  handleSubmit = (event, userData) => {
     event.preventDefault();
     const formData = [...new FormData(this.formRef)].reduce(
       (acc, [name, value]) => ({
@@ -10,7 +10,7 @@ class UserForm extends Component {
       }),
       {},
     );
-    console.log(formData);
+    this.props.onSubmit(obj);
   };
   setRef = node => {
     //this.setState({ formRef: node });
@@ -19,7 +19,11 @@ class UserForm extends Component {
 
   render() {
     return (
-      <form ref={this.setRef} className="login-form" onSubmit={this.handleSubmit}>
+      <form
+        ref={this.setRef}
+        className="login-form"
+        onSubmit={event => this.handleSubmit(event, this.state)}
+      >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
