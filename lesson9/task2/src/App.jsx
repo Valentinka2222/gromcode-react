@@ -10,7 +10,7 @@ class App extends Component {
     console.log(data)
   }
   render() {
-return <UserForm createUser= {this.createUser} />
+return <UserForm onSubmit= {this.createUser} />
 }
 };
 export default App;

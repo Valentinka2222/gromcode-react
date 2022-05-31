@@ -23,9 +23,10 @@ class UserForm extends Component {
       [name]: val,
     });
   };
-  handleSubmit = (event,obj) =>{
+  handleSubmit = (event, obj) => {
+
     event.preventDefault();
-this.props.onClick===new App().createUser(obj)
+this.props.onSubmit(obj)
 
 
   };
