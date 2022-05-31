@@ -10,7 +10,7 @@ class UserForm extends Component {
       }),
       {},
     );
-    this.props.onSubmit(obj);
+    this.props.onSubmit(userData);
   };
   setRef = node => {
     //this.setState({ formRef: node });
