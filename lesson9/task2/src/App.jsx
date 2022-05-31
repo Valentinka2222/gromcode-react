@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     
-this.func=this.createUser.bind(this)
+this.createUser=this.createUser.bind(this)
   
  
   }
@@ -17,7 +17,7 @@ this.func=this.createUser.bind(this)
 
 
 
-  return <UserForm func = {this.func} />
+  return <UserForm createUser= {this.createUser} />
 }
 };
 export default App;
