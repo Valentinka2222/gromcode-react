@@ -20,7 +20,7 @@ class UsersList extends Component {
 
     if (this.state.filterText) {
       usersList = this.props.users.slice().filter(user => {
-        if (user.name.includes(this.state.filterText)) {
+        if (user.name.toLowerCase().includes(this.state.filterText.toLowerCase())) {
           this.state.count = 0;
           return user;
         }
@@ -43,7 +43,7 @@ class UsersList extends Component {
 
         <ul className="users">
           {usersList.map(user => (
-            <User {...user} />
+            <User key={user.id} {...user} />
           ))}
         </ul>
       </div>
