@@ -19,7 +19,7 @@ class UsersList extends Component {
     let usersList;
 
     if (this.state.filterText) {
-      usersList = this.props.users.slice().map(user => {
+      usersList = this.props.users.slice().filter(user => {
         if (user.name.includes(this.state.filterText)) {
           this.state.count = 0;
           return user;
