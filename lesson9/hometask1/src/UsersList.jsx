@@ -6,8 +6,8 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
       filterText: '',
+      count: 0,
     };
   }
   onChange = event => {
@@ -17,15 +17,19 @@ class UsersList extends Component {
   };
   render() {
     let usersList;
-    console.log(this.props.users);
+
     if (this.state.filterText) {
       usersList = this.props.users.slice().map(user => {
         if (user.name.includes(this.state.filterText)) {
-          console.log(this.state.filterText);
-          console.log(user);
+          this.state.count = 0;
           return user;
         }
       });
+      usersList.reduce((acc, user) => {
+        acc += user ? (this.state.count += 1) : 0;
+
+        return acc;
+      }, this.state.count);
     } else {
       usersList = this.props.users;
     }
@@ -39,7 +43,7 @@ class UsersList extends Component {
 
         <ul className="users">
           {usersList.map(user => (
-            <User key={name} {...user} />
+            <User {...user} />
           ))}
         </ul>
       </div>

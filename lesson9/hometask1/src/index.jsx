@@ -9,17 +9,17 @@ const users = [
   {
     id: 'id-0',
     age: 21,
-    name: 'Bob',
+    name: 'Sam',
   },
   {
     id: 'id-1',
     age: 17,
-    name: 'Tom',
+    name: 'Sam',
   },
   {
     id: 'id-2',
     age: 18,
-    name: 'Tad',
+    name: 'Bob',
   },
   {
     id: 'id-3',
