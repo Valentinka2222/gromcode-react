@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ShoppingCart from './ShoppingCart';
 import Profile from './Profile';
-import CartTitle from './CartTitle';
 
 class Page extends Component {
   state = {
