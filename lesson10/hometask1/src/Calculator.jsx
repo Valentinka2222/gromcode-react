@@ -19,7 +19,7 @@ function tryConvert(temperature, convert) {
   return rounded.toString();
 }
 
-class Calculator extends Component {
+class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
