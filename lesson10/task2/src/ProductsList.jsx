@@ -16,7 +16,7 @@ class ProductsList extends Component {
             );
           })}
         </ul>
-        <div className="products__total">{`Total: ${total}`}</div>
+        <div className="products__total">{`Total: $${total}`}</div>
       </div>
     );
   }
