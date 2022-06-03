@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 
-class UserProfile extends Component {
+const scaleNames = {
+  c: 'Celcius',
+  f: 'Fahrenheit',
+};
+
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.props.onTemperatureChange(e.target.value);
+  }
+
   render() {
-    const { userData } = this.props;
-    if (!this.props.userData) {
-      return null;
-    }
-    const { name, location, avatar_url } = userData;
+    const temperature = this.props.temperature;
+    const scale = this.props.scale;
     return (
-      <div className="user">
-        <img alt="User Avatar" src={avatar_url} className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{name}</span>
-          <span className="user__location">{location}</span>
-        </div>
-      </div>
+      <fieldset>
+        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <input value={temperature} onChange={this.handleChange} />
+      </fieldset>
     );
   }
 }
-export default UserProfile;
+export default TemperatureInput;
