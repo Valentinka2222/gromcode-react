@@ -16,17 +16,4 @@ const Expand = ({ isArrow, isHide, children, title, onClose, onShow }) => {
   );
 };
 
-Expand.propTypes = {
-  isHide: PropTypes.bool,
-  children: PropTypes.element.isRequired,
-  title: PropTypes.string,
-  isArrow: PropTypes.string,
-  onClose: PropTypes.func.isRequired,
-  onShow: PropTypes.func.isRequired,
-};
-Expand.defaultProps = {
-  title: '',
-  isHide: false,
-};
-
 export default Expand;
