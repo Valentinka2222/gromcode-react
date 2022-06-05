@@ -3,23 +3,6 @@ import React, { Component } from 'react';
 import Expand from './Expand';
 
 class App extends Component {
-  state = {
-    isHide: false,
-    isArrow: 'fa-chevron-down',
-  };
-
-  showExpand = () => {
-    this.setState({
-      isHide: true,
-      isArrow: 'fa-chevron-up',
-    });
-  };
-  hideExpand = () => {
-    this.setState({
-      isHide: false,
-      isArrow: 'fa-chevron-down',
-    });
-  };
   render() {
     const elem = (
       <p>
@@ -30,14 +13,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Expand
-          isHide={this.state.isHide}
-          onClose={this.showExpand}
-          onShow={this.hideExpand}
-          title="Some title"
-          content={elem}
-          isArrow={this.state.isArrow}
-        >
+        <Expand title="Some title" content={elem}>
           {elem}
         </Expand>
       </div>
