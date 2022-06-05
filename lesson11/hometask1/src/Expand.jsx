@@ -15,7 +15,6 @@ const Expand = ({ isArrow, isHide, children, title, onClose, onShow }) => {
     </div>
   );
 };
-<button className="expand__toggle-btn"></button>;
 
 Expand.propTypes = {
   isHide: PropTypes.bool,
