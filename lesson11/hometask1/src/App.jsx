@@ -4,19 +4,20 @@ import Expand from './Expand';
 
 class App extends Component {
   state = {
-    isHide: false,
+    isHide: true,
     isArrow: 'fa-chevron-down',
+  };
+
+  showExpand = () => {
+    this.setState({
+      isHide: false,
+      isArrow: 'fa-chevron-up',
+    });
   };
   hideExpand = () => {
     this.setState({
-      isHide: false,
-      isArrow: 'fa-chevron-down',
-    });
-  };
-  showExpand = () => {
-    this.setState({
       isHide: true,
-      isArrow: 'fa-chevron-up',
+      isArrow: 'fa-chevron-down',
     });
   };
   render() {
@@ -26,23 +27,13 @@ class App extends Component {
         without writing a class.
       </p>
     );
-    let button = (
-      <button className="expand__toggle-btn" onClick={this.showExpand}>
-        <i className={`fas ${this.state.isArrow}`}></i>
-      </button>
-    );
 
-    if (!this.state.isHide) {
-      button = button;
-    } else {
-      button = null;
-    }
     return (
       <div className="app">
-        {button}
         <Expand
           isHide={this.state.isHide}
-          onClose={this.hideExpand}
+          onClose={this.showExpand}
+          onShow={this.hideExpand}
           title="some title"
           content={elem}
           isArrow={this.state.isArrow}
