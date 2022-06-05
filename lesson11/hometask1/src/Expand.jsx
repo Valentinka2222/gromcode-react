@@ -11,7 +11,7 @@ const Expand = ({ isArrow, isHide, children, title, onClose, onShow }) => {
           <i className={`fas ${isArrow}`}></i>
         </button>
       </div>
-      {!isHide ? null : <div className="expand__content">{children}</div>}
+      {isHide ? <div className="expand__content">{children}</div> : null}
     </div>
   );
 };
