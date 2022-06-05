@@ -4,19 +4,19 @@ import Expand from './Expand';
 
 class App extends Component {
   state = {
-    isHide: false,
+    isHide: true,
     isArrow: 'fa-chevron-down',
   };
 
   showExpand = () => {
     this.setState({
-      isHide: true,
+      isHide: false,
       isArrow: 'fa-chevron-up',
     });
   };
   hideExpand = () => {
     this.setState({
-      isHide: false,
+      isHide: true,
       isArrow: 'fa-chevron-down',
     });
   };
