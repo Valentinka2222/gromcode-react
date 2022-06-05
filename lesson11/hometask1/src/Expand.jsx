@@ -7,11 +7,11 @@ const Expand = ({ isArrow, isHide, children, title, onClose, onShow }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
 
-        <button className="expand__toggle-btn" onClick={!isHide ? onShow : onClose}>
+        <button className="expand__toggle-btn" onClick={isHide ? onShow : onClose}>
           <i className={`fas ${isArrow}`}></i>
         </button>
       </div>
-      {isHide ? null : <div className="expand__content">{children}</div>}
+      {!isHide ? null : <div className="expand__content">{children}</div>}
     </div>
   );
 };
