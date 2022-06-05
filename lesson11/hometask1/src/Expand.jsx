@@ -24,22 +24,35 @@ class Expand extends Component {
   };
 
   render() {
+    const { isHide, isArrow } = this.state;
+    const { children, title } = this.props;
     return (
       <div className="expand border">
         <div className="expand__header">
-          <span className="expand__title">{this.props.title}</span>
+          <span className="expand__title">{title}</span>
 
           <button
             className="expand__toggle-btn"
-            onClick={!this.state.isHide ? this.showExpand : this.hideExpand}
+            onClick={!isHide ? this.showExpand : this.hideExpand}
           >
-            <i className={`fas ${this.state.isArrow}`}></i>
+            <i className={`fas ${isArrow}`}></i>
           </button>
         </div>
-        {this.state.isHide ? <div className="expand__content">{this.props.children}</div> : null}
+        {isHide ? <div className="expand__content">{children}</div> : null}
       </div>
     );
   }
 }
+
+Expand.propTypes = {
+  isHide: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+  isArrow: PropTypes.string,
+};
+Expand.defaultProps = {
+  title: '',
+  isHide: false,
+};
 
 export default Expand;
