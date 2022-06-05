@@ -34,7 +34,7 @@ class App extends Component {
           isHide={this.state.isHide}
           onClose={this.showExpand}
           onShow={this.hideExpand}
-          title="some title"
+          title="Some title"
           content={elem}
           isArrow={this.state.isArrow}
         >

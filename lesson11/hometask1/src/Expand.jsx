@@ -25,7 +25,7 @@ Expand.propTypes = {
   onShow: PropTypes.func.isRequired,
 };
 Expand.defaultProps = {
-  title: 'some title',
+  title: '',
   isHide: false,
 };
 
