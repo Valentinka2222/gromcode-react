@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Expand = ({ isHide, title, onClose, arrow, children }) => {
-  return (
-    <div className="expand border">
-      <div className="expand__header">
-        <span className="expand__title">{title}</span>
-        <button className="expand__toggle-btn" onClick={onClose}>
-          <i className={`fas ${arrow} `}></i>
-        </button>
-      </div>
-      {!isHide ? <div className="expand__content">{children}</div> : null}
-    </div>
-  );
-};
+class Expand extends Component {
+  state = {
+    isHide: true,
+  };
 
-Expand.propTypes = {
-  title: PropTypes.string,
-  onClose: PropTypes.func.isRequired,
-};
-Expand.defaultProps = {
-  title: '',
-  isHide: true,
-};
+  hideExpand = () => {
+    this.setState({
+      isHide: !this.state.isHide,
+    });
+  };
+  render() {
+    let elemContent;
+    if (!this.state.isHide) {
+      this.arrow = 'fa-chevron-down';
+    } else {
+      elemContent = <div className="expand__content">{this.props.children}</div>;
+      this.arrow = 'fa-chevron-up';
+    }
+
+    return (
+      <div className="expand border">
+        <div className="expand__header">
+          <span className="expand__title">{this.props.title}</span>
+
+          <button className="expand__toggle-btn" onClick={this.hideExpand}>
+            <i className={`fas ${this.arrow} `}></i>
+          </button>
+        </div>
+        {elemContent}
+      </div>
+    );
+  }
+}
 
 export default Expand;

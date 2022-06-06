@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import Expand from './Expand';
 
 class App extends Component {
-  state = {
-    isHide: true,
-  };
-
-  hideExpand = () => {
-    this.setState({
-      isHide: !this.state.isHide,
-    });
-  };
   render() {
     let elem = (
       <p>
@@ -18,17 +9,9 @@ class App extends Component {
         without writing a class.
       </p>
     );
-    !this.state.isHide ? (this.arrow = 'fa-chevron-up') : (this.arrow = 'fa-chevron-down');
-
     return (
       <div className="app">
-        <Expand
-          title="Some title"
-          isHide={this.state.isHide}
-          onClose={this.hideExpand}
-          content={elem}
-          arrow={this.arrow}
-        >
+        <Expand title="Some title" content={elem}>
           {elem}
         </Expand>
       </div>
