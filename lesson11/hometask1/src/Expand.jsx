@@ -13,8 +13,9 @@ class Expand extends Component {
   };
   render() {
     let elemContent;
-    if (!this.state.isHide) {
+    if (this.state.isHide) {
       this.arrow = 'fa-chevron-down';
+      elemContent = null;
     } else {
       elemContent = <div className="expand__content">{this.props.children}</div>;
       this.arrow = 'fa-chevron-up';
