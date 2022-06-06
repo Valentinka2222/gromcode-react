@@ -11,7 +11,7 @@ class App extends Component {
     });
   };
   render() {
-    let elem = null;
+    let elem;
     if (!this.state.isHide) {
       this.arrow = 'fa-chevron-up';
       elem = (
@@ -21,11 +21,18 @@ class App extends Component {
         </p>
       );
     } else {
+      let elem = null;
       this.arrow = 'fa-chevron-down';
     }
     return (
       <div className="app">
-        <Expand title="Some title" onClose={this.hideExpand} content={elem} arrow={this.arrow}>
+        <Expand
+          title="Some title"
+          isHide={this.state.isHide}
+          onClose={this.hideExpand}
+          content={elem}
+          arrow={this.arrow}
+        >
           {elem}
         </Expand>
       </div>
