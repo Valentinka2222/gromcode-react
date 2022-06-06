@@ -12,14 +12,7 @@ class Expand extends Component {
     });
   };
   render() {
-    let elemContent;
-    if (this.state.isHide) {
-      this.arrow = 'fa-chevron-down';
-      elemContent = null;
-    } else {
-      elemContent = <div className="expand__content">{this.props.children}</div>;
-      this.arrow = 'fa-chevron-up';
-    }
+    this.state.isHide ? (this.arrow = 'fa-chevron-down') : (this.arrow = 'fa-chevron-up');
 
     return (
       <div className="expand border">
@@ -30,10 +23,19 @@ class Expand extends Component {
             <i className={`fas ${this.arrow} `}></i>
           </button>
         </div>
-        {elemContent}
+        {this.state.isHide ? null : <div className="expand__content">{this.props.children}</div>}
       </div>
     );
   }
 }
+Expand.propTypes = {
+  isHide: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+};
+Expand.defaultProps = {
+  title: '',
+  isHide: true,
+};
 
 export default Expand;
