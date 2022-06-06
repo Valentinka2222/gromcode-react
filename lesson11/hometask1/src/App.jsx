@@ -5,6 +5,7 @@ class App extends Component {
   state = {
     isHide: true,
   };
+
   hideExpand = () => {
     this.setState({
       isHide: !this.state.isHide,
@@ -17,11 +18,8 @@ class App extends Component {
         without writing a class.
       </p>
     );
-    if (!this.state.isHide) {
-      this.arrow = 'fa-chevron-up';
-    } else {
-      this.arrow = 'fa-chevron-down';
-    }
+    !this.state.isHide ? (this.arrow = 'fa-chevron-up') : (this.arrow = 'fa-chevron-down');
+
     return (
       <div className="app">
         <Expand
