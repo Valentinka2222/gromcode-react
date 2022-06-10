@@ -1,15 +1,17 @@
+
 import React, { useState, useEffect } from 'react';
 
 const ConnectionStatus = () => {
   const [isOnline, setIsOnline] = useState(true);
   useEffect(() => {
-     setIsOnline((prev) => {
-      if (!prev) { return false }
+    setIsOnline((prev) => {
+     
+      if (!prev) { return false };
       return true
-    });
-    window.addEventListener('online', () => setIsOnline());
-    window.addEventListener('offline', () => setIsOnline());
-    return window.removeEventListener('online', () => setIsOnline());
+     });
+      window.addEventListener('online', (isOnline) => setIsOnline(isOnline));
+      window.addEventListener('offline', () => setIsOnline());
+ return  window.removeEventListener('online', (isOnline) => setIsOnline(isOnline));
     
   }, [isOnline]);
   return (
