@@ -11,9 +11,11 @@ const ConnectionStatus = () => {
     });
     window.addEventListener('online', isOnline => setIsOnline(isOnline));
     window.addEventListener('offline', () => setIsOnline());
-    window.removeEventListener('online', isOnline => setIsOnline(isOnline));
-    window.removeEventListener('offline', () => setIsOnline());
-    return window.removeEventListener('online', isOnline => setIsOnline(isOnline));
+
+    return function () {
+      window.removeEventListener('online', isOnline => setIsOnline(isOnline));
+      window.removeEventListener('offline', () => setIsOnline());
+    };
   }, [isOnline]);
   return (
     <div className={isOnline ? 'status' : 'status status_offline'}>
