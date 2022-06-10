@@ -3,14 +3,8 @@ import React, { useState, useEffect } from 'react';
 const ConnectionStatus = () => {
   const [isOnline, setIsOnline] = useState(true);
   useEffect(() => {
-    setIsOnline(prev => {
-      if (!prev) {
-        return false;
-      }
-      return true;
-    });
-    window.addEventListener('online', isOnline => setIsOnline(isOnline));
-    window.addEventListener('offline', () => setIsOnline());
+    window.addEventListener('online', () => setIsOnline(true));
+    window.addEventListener('offline', () => setIsOnline(false));
 
     return function () {
       window.removeEventListener('online', isOnline => setIsOnline(isOnline));
