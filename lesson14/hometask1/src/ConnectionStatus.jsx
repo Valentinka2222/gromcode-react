@@ -11,7 +11,8 @@ const ConnectionStatus = () => {
      });
       window.addEventListener('online', (isOnline) => setIsOnline(isOnline));
       window.addEventListener('offline', () => setIsOnline());
- return  window.removeEventListener('online', (isOnline) => setIsOnline(isOnline));
+    window.removeEventListener('online', (isOnline) => setIsOnline(isOnline));
+     window.removeEventListener('offline', () => setIsOnline());
     
   }, [isOnline]);
   return (
