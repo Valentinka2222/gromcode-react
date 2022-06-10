@@ -26,6 +26,7 @@ class UserForm extends Component {
   };
 
   render() {
+    const { name, student, occupation, about } = this.state;
     return (
       <form className="login-form" onSubmit={event => this.handleSubmit(event, this.state)}>
         <h1 className="form-title">Profile</h1>
@@ -38,7 +39,7 @@ class UserForm extends Component {
             type="text"
             id="name"
             name="name"
-            value={this.state.name}
+            value={name}
             onChange={this.handleChange}
           />
         </div>
@@ -48,7 +49,7 @@ class UserForm extends Component {
           </label>
           <input
             className="form-input"
-            value={this.state.student}
+            value={student}
             onChange={this.handleChange}
             type="checkbox"
             id="student"
@@ -62,7 +63,7 @@ class UserForm extends Component {
           <select
             name="occupation"
             onChange={this.handleChange}
-            value={this.state.occupation}
+            value={occupation}
             className="form-input"
           >
             <option value="london">London</option>
@@ -78,7 +79,7 @@ class UserForm extends Component {
           <textarea
             name="about"
             onChange={this.handleChange}
-            value={this.state.about}
+            value={about}
             className="form-input"
           />
         </div>

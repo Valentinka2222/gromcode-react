@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Login from './Login';
 import Logout from './Logout';
 import Spinner from './Spinner';

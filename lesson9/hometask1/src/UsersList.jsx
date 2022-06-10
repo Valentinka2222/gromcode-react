@@ -17,28 +17,28 @@ class UsersList extends Component {
   };
   render() {
     let usersList;
-
-    if (this.state.filterText) {
-      usersList = this.props.users.slice().filter(user => {
-        if (user.name.toLowerCase().includes(this.state.filterText.toLowerCase())) {
-          this.state.count = 0;
+    const { filterText, count } = this.state;
+    const { users } = this.props;
+    if (filterText) {
+      usersList = users.slice().filter(user => {
+        if (user.name.toLowerCase().includes(filterText.toLowerCase())) {
+         count = 0;
           return user;
         }
       });
       usersList.reduce((acc, user) => {
-        acc += user ? (this.state.count += 1) : 0;
-
+        acc += user ? (count += 1) : 0;
         return acc;
-      }, this.state.count);
+      }, count);
     } else {
-      usersList = this.props.users;
+      usersList = users;
     }
     return (
       <div>
         <Filter
-          count={this.state.count}
+          count={count}
           onChange={this.onChange}
-          filterText={this.state.filterText}
+          filterText={filterText}
         />
 
         <ul className="users">

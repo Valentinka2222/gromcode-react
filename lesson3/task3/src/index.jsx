@@ -4,9 +4,6 @@ import './styles.scss'
 import ReactDOM from 'react-dom';
 
 const rootelement = document.querySelector('#root')
-
-
-
 ReactDOM.render(<App/>,rootelement)
 
 

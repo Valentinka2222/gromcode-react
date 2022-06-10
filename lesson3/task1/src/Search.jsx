@@ -1,10 +1,5 @@
-
 import React from 'react';
-
-
 import './search.scss'
-
-
 
 const SearchField = (props) => {
     const element = [
