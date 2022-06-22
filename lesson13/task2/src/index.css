@@ -29,3 +29,31 @@ body {
 .navigation__item {
   margin: 8px;
 }
+
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.user__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.user__info {
+  text-align: center;
+  font-size: 24px;
+  margin: 32px;
+}
+
+.user__name {
+  font-weight: 700;
+}
+
+.user__location {
+  opacity: 0.5;
+  margin-left: 16px;
+}

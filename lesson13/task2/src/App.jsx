@@ -1,27 +1,28 @@
 import React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-
-import Products from './Products';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import Users from './Users';
 import Home from './Home';
-
 const App = () => {
   return (
-    <div className="page">
+    <>
       <BrowserRouter>
-        <ul className="navigation">
-          <li className="navigation__item">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="navigation__item">
-            <Link to="/products">Products</Link>
-          </li>
-        </ul>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/products" component={Products}></Route>
+        <div className="page">
+          <ul className="navigation">
+            <li className="navigation__item">
+              <Link to="/users/github">Home</Link>
+            </li>
+            <li className="navigation__item">
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route path="/users" component={Users}></Route>
+          </Switch>
+        </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 export default App;
